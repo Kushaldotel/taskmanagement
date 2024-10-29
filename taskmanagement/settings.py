@@ -142,6 +142,8 @@ REST_FRAMEWORK = {
        'authentication.utils.CustomRenderer',
    ),
     "DEFAULT_PARSER_CLASSES": ("rest_framework.parsers.JSONParser",),
+
+    #Setting up default permission is IsAuthenticated
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ]
