@@ -2,9 +2,14 @@ from rest_framework import generics, permissions
 from .models import Task
 from .serializers import TaskSerializer
 from rest_framework.exceptions import PermissionDenied
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
 
 class TaskListCreateView(generics.ListCreateAPIView):
     serializer_class = TaskSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['is_completed']  # Allow filtering by completion status
+    search_fields = ['title', 'description']  # Allow searching in title and description
 
     #no need to mention is authentication permission here as it is already mentioned by default in settings.
 
