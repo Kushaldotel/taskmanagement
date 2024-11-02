@@ -29,6 +29,8 @@ All dependencies are installed automatically within the Docker container, so no 
 
     no need to configur db as for demo default postgres db is being used:
 
+    create a virtual environment on your folder where you will clone and activate it if you want.
+
     docker-compose up --build to run the application
 
     Your application starts at http://0.0.0.0:8000/
@@ -179,6 +181,9 @@ Search by Title or Description:
 /api/tasks/?search=task_keyword
 Description: Retrieves tasks that contain the specified keyword in the title or description.
 
+## Method to run test cases:
+
+In a new terminal run "docker-compose exec web python manage.py test"
 
 ## Additional Deployement in Aws can Look like
 
